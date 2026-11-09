@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Supermercado PFY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web de gestión de inventario y carrito de compras, desarrollada como proyecto de **Desarrollo Frontend II**. Permite consultar productos, revisar su disponibilidad, agregarlos al carrito y administrar cantidades durante la sesión.
 
-## Available Scripts
+## Tecnologías
 
-In the project directory, you can run:
+- React 19
+- Create React App (`react-scripts` 5)
+- React Router DOM 7
+- Tailwind CSS 3.4
+- PostCSS y Autoprefixer
 
-### `npm start`
+Se utiliza Tailwind CSS 3.4 porque es compatible con la integración de PostCSS de Create React App 5.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requisitos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js y npm instalados.
 
-### `npm test`
+## Instalación y ejecución
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clona el repositorio y entra a su directorio:
 
-### `npm run build`
+```bash
+git clone https://github.com/Rai-Morroni/PFY2202-Frontend-II-2026.git
+cd PFY2202-Frontend-II-2026
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Instala las dependencias e inicia el servidor de desarrollo:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## Funcionalidades actuales
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Página de inicio con acceso al catálogo.
+- Inventario de productos de ejemplo, con filtro por categoría y acceso al detalle.
+- Vista de detalle con información del producto, stock disponible y opción para agregar una unidad al carrito.
+- Formulario para incorporar artículos al inventario.
+- Carrito con controles para aumentar o disminuir las unidades, sincronizando las cantidades con el inventario.
+- Páginas informativas de “Quiénes somos” y contacto.
+- Menú de navegación disponible en las distintas vistas.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+El inventario inicial contiene manzanas, leche entera y arroz. El estado del inventario y del carrito se mantiene en memoria mediante Context de React; no hay persistencia en una base de datos y los cambios se pierden al recargar la página.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Rutas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Inicio |
+| `/inventario` | Inventario y filtro por categoría |
+| `/agregar-articulo` | Formulario para agregar un producto |
+| `/articulo/:id` | Detalle de un producto |
+| `/carrito` | Carrito de compras |
+| `/quienes-somos` | Información del supermercado |
+| `/contacto` | Datos de contacto |
 
-## Learn More
+## Comandos disponibles
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Comando | Descripción |
+| --- | --- |
+| `npm start` | Inicia la aplicación en modo desarrollo. |
+| `npm test` | Ejecuta las pruebas con Jest en modo interactivo. |
+| `npm run build` | Genera la versión optimizada para producción en `build/`. |
+| `npm run deploy` | Construye y publica `build/` en GitHub Pages mediante `gh-pages`. |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Estructura principal
 
-### Code Splitting
+```text
+src/
+├── components/       # Componentes compartidos, como el menú inferior
+├── context/          # Estado global del inventario y del carrito
+├── pages/            # Vistas asociadas a las rutas de la aplicación
+├── App.js            # Navegación y estructura principal
+└── index.css         # Directivas de Tailwind CSS
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La configuración de Tailwind está en `tailwind.config.js` y la de PostCSS en `postcss.config.js`.
