@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PFY2202-Frontend-II-2026/static/css/main.2872fcd1.css",
-    "main.js": "/PFY2202-Frontend-II-2026/static/js/main.f39c3c94.js",
+    "main.css": "/PFY2202-Frontend-II-2026/static/css/main.9812bf23.css",
+    "main.js": "/PFY2202-Frontend-II-2026/static/js/main.0f404db2.js",
     "static/js/453.fbc91273.chunk.js": "/PFY2202-Frontend-II-2026/static/js/453.fbc91273.chunk.js",
     "index.html": "/PFY2202-Frontend-II-2026/index.html",
-    "main.2872fcd1.css.map": "/PFY2202-Frontend-II-2026/static/css/main.2872fcd1.css.map",
-    "main.f39c3c94.js.map": "/PFY2202-Frontend-II-2026/static/js/main.f39c3c94.js.map",
+    "main.9812bf23.css.map": "/PFY2202-Frontend-II-2026/static/css/main.9812bf23.css.map",
+    "main.0f404db2.js.map": "/PFY2202-Frontend-II-2026/static/js/main.0f404db2.js.map",
     "453.fbc91273.chunk.js.map": "/PFY2202-Frontend-II-2026/static/js/453.fbc91273.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2872fcd1.css",
-    "static/js/main.f39c3c94.js"
+    "static/css/main.9812bf23.css",
+    "static/js/main.0f404db2.js"
   ]
 }
