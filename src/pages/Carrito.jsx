@@ -47,6 +47,13 @@ export const Carrito = () => {
           );
         })}
       </div>
+
+      {/* Botón añadido para mejorar la navegación desde el carrito */}
+      <div className="mt-8 text-center">
+        <Link to="/inventario" className="inline-block bg-blue-100 text-blue-800 font-bold py-3 px-6 rounded hover:bg-blue-200 transition shadow-sm">
+          &larr; Seguir comprando
+        </Link>
+      </div>
     </div>
   );
 };

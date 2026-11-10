@@ -13,7 +13,8 @@ import { Contacto } from './pages/Contacto';
 function App() {
   return (
     <InventoryProvider>
-      <BrowserRouter>
+      {/*Configuración del BrowserRouter con la ruta base para el despliegue en GitHub Pages*/}
+      <BrowserRouter basename="/PFY2202-Frontend-II-2026">
         <div className="min-h-screen bg-gray-100 pb-20">
           
           <header className="bg-blue-900 text-white p-4 text-center text-2xl font-bold shadow-md">

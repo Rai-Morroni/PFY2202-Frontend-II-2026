@@ -3,10 +3,10 @@ import { InventoryContext } from '../context/InventoryContext';
 import { Link } from 'react-router-dom';
 
 export const Inventario = () => {
-  const { inventario } = useContext(InventoryContext);
+  // Ahora también extraemos agregarAlCarrito
+  const { inventario, agregarAlCarrito } = useContext(InventoryContext);
   const [filtro, setFiltro] = useState('Todas');
 
-  // Filtramos visualmente sin afectar el estado original
   const inventarioFiltrado = filtro === 'Todas' 
     ? inventario 
     : inventario.filter(item => item.tipo === filtro);
@@ -36,13 +36,25 @@ export const Inventario = () => {
               <p className="text-gray-600">Marca: {item.marca}</p>
               <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">{item.tipo}</span>
             </div>
-            <div className="mt-4 flex justify-between items-center border-t pt-3">
-              <p className="font-semibold">Stock: {item.cantidad}</p>
-              {/* Este enlace nos llevará a la pantalla de detalle */}
-              <Link to={`/articulo/${item.id}`} className="text-blue-600 hover:text-blue-800 font-bold text-sm underline">
-                Ver detalle
-              </Link>
+            
+            {/* Contenedor de botones actualizado */}
+            <div className="mt-4 flex flex-col gap-3 border-t pt-3">
+              <div className="flex justify-between items-center">
+                <p className="font-semibold">Stock: {item.cantidad}</p>
+                <Link to={`/articulo/${item.id}`} className="text-blue-600 hover:text-blue-800 font-bold text-sm underline">
+                  Ver detalle
+                </Link>
+              </div>
+              
+              <button 
+                onClick={() => agregarAlCarrito(item)}
+                disabled={item.cantidad === 0}
+                className={`w-full py-2 rounded font-bold text-white transition ${item.cantidad > 0 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'}`}
+              >
+                {item.cantidad > 0 ? 'Agregar al carrito' : 'Sin Stock'}
+              </button>
             </div>
+
           </div>
         ))}
         {inventarioFiltrado.length === 0 && (

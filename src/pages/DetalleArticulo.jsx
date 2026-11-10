@@ -7,7 +7,7 @@ export const DetalleArticulo = () => {
   const navigate = useNavigate();
   const { inventario, agregarAlCarrito } = useContext(InventoryContext);
 
-  // Busca el artículo específico por su ID
+  // Buscamos el artículo en el inventario usando el ID
   const articulo = inventario.find(item => item.id === parseInt(id));
 
   if (!articulo) {
@@ -17,7 +17,7 @@ export const DetalleArticulo = () => {
   const handleAgregarCarrito = () => {
     if (articulo.cantidad > 0) {
       agregarAlCarrito(articulo);
-      navigate('/carrito');
+      // Eliminamos el navigate('/carrito') para no interrumpir la compra
     }
   };
 
@@ -38,9 +38,15 @@ export const DetalleArticulo = () => {
         {articulo.cantidad > 0 ? 'Agregar 1 al Carrito' : 'Sin Stock'}
       </button>
       
-      <button onClick={() => navigate('/inventario')} className="w-full mt-3 text-blue-600 font-semibold hover:underline">
-        Volver al inventario
-      </button>
+      {/* Botones de navegación claros */}
+      <div className="flex justify-between mt-4">
+        <button onClick={() => navigate('/inventario')} className="text-blue-600 font-semibold hover:underline">
+          &larr; Volver al inventario
+        </button>
+        <button onClick={() => navigate('/carrito')} className="text-blue-800 font-semibold hover:underline">
+          Ir a pagar &rarr;
+        </button>
+      </div>
     </div>
   );
 };
