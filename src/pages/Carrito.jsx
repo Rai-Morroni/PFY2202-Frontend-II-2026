@@ -53,6 +53,12 @@ export const Carrito = () => {
         <Link to="/inventario" className="inline-block bg-blue-100 text-blue-800 font-bold py-3 px-6 rounded hover:bg-blue-200 transition shadow-sm">
           &larr; Seguir comprando
         </Link>
+
+        <button 
+          onClick={() => alert('¡Gracias por preferir Supermercado PFY! (Módulo de pago en construcción).')}
+          className="bg-green-600 text-white font-bold py-3 px-6 rounded hover:bg-green-700 transition shadow-sm text-center">
+          Ir a pagar &rarr;
+        </button>        
       </div>
     </div>
   );
