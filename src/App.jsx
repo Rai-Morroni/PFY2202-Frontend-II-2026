@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router';
 import { InventoryProvider } from './context/InventoryContext';
 import { BottomMenu } from './components/BottomMenu';
 import { DetalleArticulo } from './pages/DetalleArticulo';
@@ -14,7 +14,7 @@ function App() {
   return (
     <InventoryProvider>
       {/*Configuración del BrowserRouter con la ruta base para el despliegue en GitHub Pages*/}
-      <BrowserRouter basename="/PFY2202-Frontend-II-2026">
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="min-h-screen bg-gray-100 pb-20">
           
           <header className="bg-blue-900 text-white p-4 text-center text-2xl font-bold shadow-md">

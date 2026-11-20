@@ -3,6 +3,7 @@
   "name": "supermercado-rainiero-morroni-pfy2202",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
@@ -10,23 +11,15 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-router-dom": "^7.18.5",
-    "react-scripts": "5.0.1",
+    "react-router": "^8.5.2",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+"scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "production": [
@@ -41,9 +34,11 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
     "autoprefixer": "^10.6.2",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.32",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "vite": "^8.3.8"
   }
 }

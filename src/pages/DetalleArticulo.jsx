@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import { InventoryContext } from '../context/InventoryContext';
 
 export const DetalleArticulo = () => {

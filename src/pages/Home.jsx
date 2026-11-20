@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 export const Home = () => (
   <div className="text-center mt-12">
