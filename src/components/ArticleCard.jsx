@@ -21,7 +21,7 @@ export const ArticleCard = ({ item }) => {
         </div>
         <button 
           onClick={() => agregarAlCarrito(item)}
-          disabled={item.cantidad === 0}
+          disabled={item.cantidad <= 0}
           className={`w-full py-2 rounded font-bold text-white transition ${item.cantidad > 0 ? 'bg-blue-600' : 'bg-gray-400 cursor-not-allowed'}`}
         >
           {item.cantidad > 0 ? 'Agregar al carrito' : 'Sin Stock'}

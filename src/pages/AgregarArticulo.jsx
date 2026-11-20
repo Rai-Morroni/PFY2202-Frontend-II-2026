@@ -36,8 +36,12 @@ export const AgregarArticulo = () => {
       return;
     }
 
-    agregarArticulo(formData);
-    // Redirige al inventario después de guardar
+    // Validación de cantidad para asegurar que sea un número positivo 
+    agregarArticulo({
+      ...formData,
+      cantidad: Number(formData.cantidad)
+    });
+    
     navigate('/inventario');
   };
 
